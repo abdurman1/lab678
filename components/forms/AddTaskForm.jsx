@@ -71,5 +71,28 @@ function AddTaskFrom({children, className}) {
 		</section>
 	)
 }
+// State for the form fields
+const [task, setTask] = useState('');
+
+// Function to handle form submission
+const handleSubmit = async (event) => {
+  event.preventDefault()
+};
+
+//form component's return statement
+<form onSubmit={handleSubmit}>
+  <input
+    type="text"
+    value={task}
+    onChange={(e) => setTask(e.target.value)}
+    placeholder="Enter a task"
+  />
+  <button type="submit">Submit</button>
+</form>
+
+
+import { toast } from 'react-toastify';
+toast.success('Task added successfully!');
+
 
 export {AddTaskFrom}

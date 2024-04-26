@@ -25,4 +25,23 @@ function AddTask({children, className}) {
 	)
 }
 
+
+// State to control the visibility of the modal
+const [isOpen, setIsOpen] = useState(false);
+
+// Function to handle opening the modal
+const handleOpen = () => setIsOpen(true);
+
+// Function to handle closing the modal
+const handleClose = () => setIsOpen(false);
+
+// component's return statement
+<button onClick={handleOpen}>Add Task</button>
+{isOpen && (
+  <Modal>
+    <AddTaskForm onClose={handleClose} />
+  </Modal>
+)}
+
+
 export {AddTask}
