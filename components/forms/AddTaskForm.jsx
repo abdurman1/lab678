@@ -89,3 +89,8 @@ const handleSubmit = async (event) => {
   />
   <button type="submit">Submit</button>
 </form>
+
+import { toast as toastify } from 'react-toastify';
+
+toastify.success('Task added successfully!');
+
